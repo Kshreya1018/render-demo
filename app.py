@@ -8,7 +8,7 @@ model_path='best_model.pkl'
 
 with open(model_path, 'rb') as file:
 
-    model = pickle.load(file)
+    modell = pickle.load(file)
 
 app = Flask(__name__)
 
@@ -28,7 +28,7 @@ def predict():
 
         final_features = [np.array(features)]
 
-        prediction = model.predict(final_features)
+        prediction = modell.predict(final_features)
 
         output = round(prediction[0], 2)
 
