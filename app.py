@@ -8,7 +8,7 @@ model_path='best_model.pkl'
 
 with open(model_path, 'rb') as file:
 
-    model = pickle.load(file)
+    modell = pickle.load(file)
 
 app = Flask(__name__)
 

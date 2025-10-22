@@ -3,66 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle CO Emission Predictor</title>
+    <title>COEmission Predictor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #c3ecb2, #7dd3fc);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #f0f4f8;
         }
         .container {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 350px;
+            width: 60%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
         }
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        input[type="number"] {
-            width: 90%;
+        .header {
+            background-color: #4CAF50;
+            color: #fff;
             padding: 10px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border: 1px solid #ccc;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
         }
-        button {
-            background-color: #007bff;
-            color: white;
+        .header h2 {
+            margin: 0;
+        }
+        .nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: right;
+            border-radius: 0 0 8px 8px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .form-content {
+            padding: 20px;
+        }
+        .form-row {
+            margin-bottom: 10px;
+        }
+        .form-row label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-row input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .predict-btn {
+            background-color: #ff9800;
+            color: #fff;
             padding: 10px 20px;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #2c3e50;
+        .predict-btn:hover {
+            background-color: #e68900;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>🚗 CO Emission Predictor</h2>
-        <form action="/predict" method="post">
-            <input type="number" step="any" name="engine_size" placeholder="Engine Size (L)" required><br>
-            <input type="number" step="any" name="cylinders" placeholder="Cylinders" required><br>
-            <input type="number" step="any" name="fuel_consumption" placeholder="Fuel Consumption (L/100km)" required><br>
-            <button type="submit">Predict</button>
-        </form>
-
-        {% if prediction_text %}
-            <div class="result">{{ prediction_text }}</div>
-        {% endif %}
+        <div class="header">
+            <h2>COEmission Predictor</h2>
+        </div>
+        <div class="nav">
+            <a href="           
+            <a href="#">About</a>
+            <a href="              
+        </div>
+        <div class="form-content">
+            <div class="form-row">
+                <label>MAKE</label>
+                <input type="text" value="ACURA">
+            </div>
+            <div class="form-row">
+                <label>MODEL</label>
+                <input type="text" value="I.GEL">
+            </div>
+            <div class="form-row">
+                <label>VEHICLE CLASS</label>
+                <input type="text" value="COMPACT">
+            </div>
+            <div class="form-row">
+                <label>ENGINE SIZE</label>
+                <input type="text" value="2.0">
+            </div>
+            <div class="form-row">
+                <label>CYLINDERS</label>
+                <input type="text" value="3">
+            </div>
+            <div class="form-row">
+                <label>TRANSMISSION</label>
+                <input type="text" value="A4">
+            </div>
+            <div class="form-row">
+                <label>FUEL</label>
+                <input type="text" value="X">
+            </div>
+            <div class="form-row">
+                <label>FUEL CONSUMPTION (L/100km or MPG equivalent)</label>
+                <input type="text" placeholder="e.g. 13.7">
+            </div>
+            <button class="predict-btn">Predict</button>
+        </div>
     </div>
 </body>
 </html>
