@@ -68,52 +68,55 @@
     </style>
 </head>
 <body>
-    <form action="/predict" method="POST">  <div class="form-row">
     <div class="container">
         <div class="header">
             <h2>COEmission Predictor</h2>
         </div>
         <div class="nav">
-            <a href="           
+            <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="              
         </div>
         <div class="form-content">
-            <div class="form-row">
-                <label>MAKE</label>
-                <input type="text" value="ACURA">
-            </div>
-            <div class="form-row">
-                <label>MODEL</label>
-                <input type="text" value="I.GEL">
-            </div>
-            <div class="form-row">
-                <label>VEHICLE CLASS</label>
-                <input type="text" value="COMPACT">
-            </div>
-            <div class="form-row">
-                <label>ENGINE SIZE</label>
-                <input type="text" value="2.0">
-            </div>
-            <div class="form-row">
-                <label>CYLINDERS</label>
-                <input type="text" value="3">
-            </div>
-            <div class="form-row">
-                <label>TRANSMISSION</label>
-                <input type="text" value="A4">
-            </div>
-            <div class="form-row">
-                <label>FUEL</label>
-                <input type="text" value="X">
-            </div>
-            <div class="form-row">
-                <label>FUEL CONSUMPTION (L/100km or MPG equivalent)</label>
-                <input type="text" placeholder="e.g. 13.7">
-            </div>
-            <button class="predict-btn">Predict</button>
+            <form action="/predict" method="POST">
+                <div class="form-row">
+                    <label>MAKE</label>
+                    <input type="text" name="make" value="BMW">
+                </div>
+                <div class="form-row">
+                    <label>MODEL</label>
+                    <input type="text" name="model" value="C70 TURBO">
+                </div>
+                <div class="form-row">
+                    <label>VEHICLE CLASS</label>
+                    <input type="text" name="vehicle_class" value="MID SIZE">
+                </div>
+                <div class="form-row">
+                    <label>ENGINE SIZE</label>
+                    <input type="text" name="engine_size" value="2.0">
+                </div>
+                <div class="form-row">
+                    <label>CYLINDERS</label>
+                    <input type="text" name="cylinders" value="3">
+                </div>
+                <div class="form-row">
+                    <label>TRANSMISSION</label>
+                    <input type="text" name="transmission" value="A3">
+                </div>
+                <div class="form-row">
+                    <label>FUEL</label>
+                    <input type="text" name="fuel" value="N">
+                </div>
+                <div class="form-row">
+                    <label>FUEL CONSUMPTION (L/100km or MPG equivalent)</label>
+                    <input type="text" name="fuel_consumption" placeholder="e.g. 12.8">
+                </div>
+                <button class="predict-btn" type="submit">Predict</button>
+            </form>
+            {% if prediction_text %}
+            <h3 style="text-align:center;">{{ prediction_text }}</h3>
+            {% endif %}
         </div>
     </div>
-    </form>
 </body>
 </html>
+
